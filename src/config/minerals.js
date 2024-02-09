@@ -1,7 +1,7 @@
 export const minerals = [
   {
-    id: 'copper',
-    displayName: 'copper ore',
+    id: "copper",
+    displayName: "copper ore",
     value: 24,
     distribution: {
       minDepth: 10,
@@ -11,8 +11,8 @@ export const minerals = [
     hardness: 5,
   },
   {
-    id: 'tin',
-    displayName: 'tin ore',
+    id: "tin",
+    displayName: "tin ore",
     value: 50,
     distribution: {
       minDepth: 40,
@@ -22,8 +22,8 @@ export const minerals = [
     hardness: 5,
   },
   {
-    id: 'iron',
-    displayName: 'iron ore',
+    id: "iron",
+    displayName: "iron ore",
     value: 60,
     distribution: {
       minDepth: 60,
@@ -33,8 +33,8 @@ export const minerals = [
     hardness: 10,
   },
   {
-    id: 'coal',
-    displayName: 'coal',
+    id: "coal",
+    displayName: "coal",
     value: 100,
     distribution: {
       minDepth: 70,
@@ -42,5 +42,5 @@ export const minerals = [
       abundance: 6,
     },
     hardness: 15,
-  }
+  },
 ]

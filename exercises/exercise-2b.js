@@ -47,6 +47,6 @@
  * @param {Array.<Upgrade>} upgrades
  * @returns {Array.<string>} The upgrades the player can afford
  */
-function getAffordableUpgrades(player, upgrades) {
+export function getAffordableUpgrades(player, upgrades) {
   // TODO
 }

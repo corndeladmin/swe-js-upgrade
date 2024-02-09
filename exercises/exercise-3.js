@@ -18,6 +18,6 @@
  * @param {Upgrade} upgrade - The upgrade object
  * @returns {boolean} Whether the upgrade is available
  */
-function isUpgradeOwned(player, upgrade) {
+export function isUpgradeOwned(player, upgrade) {
   // TODO
 }

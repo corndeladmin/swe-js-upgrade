@@ -20,6 +20,6 @@
  * @param {Array.<Upgrade>} upgrades - The upgrades to sort
  * @returns {Array.<Upgrade>} The sorted upgrades
  */
-function sortUpgrades(upgrades) {
+export function sortUpgrades(upgrades) {
   // TODO
 }

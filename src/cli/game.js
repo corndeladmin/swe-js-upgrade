@@ -30,8 +30,10 @@ export function gameActions(rl) {
   }
 
   function saveGame(state) {
-    const gameJson = Buffer.from(JSON.stringify(state.getGame().player)).toString('base64')
-    console.log('Save this string to load your game later:')
+    const gameJson = Buffer.from(
+      JSON.stringify(state.getGame().player),
+    ).toString("base64")
+    console.log("Save this string to load your game later:")
     console.log(gameJson)
   }
 
@@ -40,20 +42,24 @@ export function gameActions(rl) {
   }
 
   async function buyUpgrades(state) {
-    const answer = await rl.question('Enter the id of the upgrade you want to buy: ')
+    const answer = await rl.question(
+      "Enter the id of the upgrade you want to buy: ",
+    )
     console.log(state.getGame().buyUpgrade(answer))
   }
 
-
   return {
-    d: { description: '(D)escend', callback: descend },
-    a: { description: '(A)scend', callback: ascend },
-    m: { description: '(M)ine', callback: mine },
-    i: { description: 'Check (i)nventory', callback: checkInventory },
-    u: { description: 'List available (u)pgrades', callback: listAvailableUpgrades },
-    o: { description: 'List (o)wned upgrades', callback: listOwnedUpgrades },
-    v: { description: 'Sa(v)e game', callback: saveGame },
-    s: { description: '(S)ell minerals', callback: sellMinerals },
-    b: { description: '(B)uy upgrade', callback: buyUpgrades },
+    d: { description: "(D)escend", callback: descend },
+    a: { description: "(A)scend", callback: ascend },
+    m: { description: "(M)ine", callback: mine },
+    i: { description: "Check (i)nventory", callback: checkInventory },
+    u: {
+      description: "List available (u)pgrades",
+      callback: listAvailableUpgrades,
+    },
+    o: { description: "List (o)wned upgrades", callback: listOwnedUpgrades },
+    v: { description: "Sa(v)e game", callback: saveGame },
+    s: { description: "(S)ell minerals", callback: sellMinerals },
+    b: { description: "(B)uy upgrade", callback: buyUpgrades },
   }
 }

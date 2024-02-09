@@ -5,5 +5,5 @@ export const baseStats = {
     cycles: 5,
     strength: 5,
     chanceToFindMineral: 0.5,
-  }
+  },
 }

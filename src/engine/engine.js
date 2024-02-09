@@ -1,4 +1,4 @@
-import { baseStats, minerals, upgrades } from '../config/index.js'
+import { baseStats, minerals, upgrades } from "../config/index.js"
 
 export function createGame(loadPlayer = {}) {
   const player = {
@@ -6,27 +6,30 @@ export function createGame(loadPlayer = {}) {
     depth: 0,
     inventory: [],
     upgrades: [],
-    ...loadPlayer
+    ...loadPlayer,
   }
 
   function getUpgradeById(upgradeId) {
-    return upgrades.find(upgrade => upgrade.id === upgradeId)
+    return upgrades.find((upgrade) => upgrade.id === upgradeId)
   }
 
   function calculateUpgradedStats() {
     const calculatedStats = structuredClone(baseStats)
-    player.upgrades.forEach(upgrade => getUpgradeById(upgrade).applyUpgrade(player, calculatedStats))
+    player.upgrades.forEach((upgrade) =>
+      getUpgradeById(upgrade).applyUpgrade(player, calculatedStats),
+    )
     return calculatedStats
   }
 
   function getMineralById(mineralId) {
-    return minerals.find(mineral => mineral.id === mineralId)
+    return minerals.find((mineral) => mineral.id === mineralId)
   }
 
   function getAvailableMinerals() {
-    return minerals.filter(mineral => 
-      mineral.distribution.maxDepth >= player.depth &&
-      mineral.distribution.minDepth <= player.depth
+    return minerals.filter(
+      (mineral) =>
+        mineral.distribution.maxDepth >= player.depth &&
+        mineral.distribution.minDepth <= player.depth,
     )
   }
 
@@ -37,10 +40,12 @@ export function createGame(loadPlayer = {}) {
     const mineralsTooHard = []
     const mineralsDropped = []
 
-    ;[...Array(stats.mining.cycles)].forEach(_ => {
+    ;[...Array(stats.mining.cycles)].forEach((_) => {
       const mineral = searchForMineral(availableMinerals)
 
-      if (!mineral) { return }
+      if (!mineral) {
+        return
+      }
 
       if (mineral.hardness > stats.drillHardness) {
         mineralsTooHard.push(mineral.id)
@@ -52,17 +57,19 @@ export function createGame(loadPlayer = {}) {
       player.inventory.push(mineral.id)
 
       if (player.inventory.length > stats.inventorySize) {
-        player.inventory.sort((a, b) => getMineralById(a).value - getMineralById(b).value)
+        player.inventory.sort(
+          (a, b) => getMineralById(a).value - getMineralById(b).value,
+        )
         const cheapestMineral = player.inventory.shift()
         mineralsDropped.push(cheapestMineral)
       }
     })
 
-    return { 
-      availableMinerals: availableMinerals.map(mineral => mineral.id), 
-      mineralsMined, 
-      mineralsTooHard, 
-      mineralsDropped 
+    return {
+      availableMinerals: availableMinerals.map((mineral) => mineral.id),
+      mineralsMined,
+      mineralsTooHard,
+      mineralsDropped,
     }
   }
 
@@ -72,43 +79,54 @@ export function createGame(loadPlayer = {}) {
     }
 
     const stats = calculateUpgradedStats()
-    
+
     if (Math.random() < stats.mining.chanceToFindMineral) {
       return null
     }
 
-    const { mineralDistribution, sum } = availableMinerals.reduce((acc, mineral) => ({ 
-      mineralDistribution: [
-        ...acc.mineralDistribution, 
-        { mineral, threshold: acc.sum + mineral.distribution.abundance }
-      ],
-      sum: acc.sum + mineral.distribution.abundance
-    }), { mineralDistribution: [], sum: 0 })
+    const { mineralDistribution, sum } = availableMinerals.reduce(
+      (acc, mineral) => ({
+        mineralDistribution: [
+          ...acc.mineralDistribution,
+          { mineral, threshold: acc.sum + mineral.distribution.abundance },
+        ],
+        sum: acc.sum + mineral.distribution.abundance,
+      }),
+      { mineralDistribution: [], sum: 0 },
+    )
 
     const luck = Math.random() * sum
 
-    return mineralDistribution.find(mineral => luck < mineral.threshold).mineral
+    return mineralDistribution.find((mineral) => luck < mineral.threshold)
+      .mineral
   }
 
   function sellInventory() {
-    const soldInventory = player.inventory.map(getMineralById) 
+    const soldInventory = player.inventory.map(getMineralById)
 
-    const inventoryValue = soldInventory.reduce((acc, mineral) => acc + mineral.value, 0)
+    const inventoryValue = soldInventory.reduce(
+      (acc, mineral) => acc + mineral.value,
+      0,
+    )
 
     player.inventory = []
     player.money += inventoryValue
     return {
       soldInventory,
       inventoryValue,
-      money: player.money
+      money: player.money,
     }
   }
-  
-  function getAvailableUpgrades() {
-    const unappliedUpgrades = upgrades.filter(upgrade => !player.upgrades.includes(upgrade.id))
 
-    const upgradesWithMetPrerequisites = unappliedUpgrades.filter(upgrade => 
-      (upgrade.prerequisites || []).every(prerequisite => player.upgrades.includes(prerequisite))
+  function getAvailableUpgrades() {
+    const unappliedUpgrades = upgrades.filter(
+      (upgrade) => !player.upgrades.includes(upgrade.id),
+    )
+
+    const upgradesWithMetPrerequisites = unappliedUpgrades.filter((upgrade) =>
+      (upgrade.prerequisites || []).every((prerequisite) =>
+        player.upgrades.includes(prerequisite),
+      ),
     )
 
     return upgradesWithMetPrerequisites
@@ -116,10 +134,15 @@ export function createGame(loadPlayer = {}) {
 
   function buyUpgrade(upgradeId) {
     const availableUpgrades = getAvailableUpgrades()
-    const upgrade = availableUpgrades
-      .find(upgrade => upgrade.id === upgradeId)
-    if (!upgrade) { return null }
-    if (player.money < upgrade.value) { return null }
+    const upgrade = availableUpgrades.find(
+      (upgrade) => upgrade.id === upgradeId,
+    )
+    if (!upgrade) {
+      return null
+    }
+    if (player.money < upgrade.value) {
+      return null
+    }
     player.money -= upgrade.value
     player.upgrades.push(upgradeId)
     return upgrade
@@ -172,6 +195,6 @@ export function gameWrapper() {
   return {
     createNewGame,
     loadGame,
-    getGame
+    getGame,
   }
 }

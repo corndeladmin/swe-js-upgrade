@@ -39,18 +39,22 @@
  * const player = {
  *   inventory: ['copper', 'copper', 'iron'],
  * }
- * const minerals = {
- *   copper: {
+ * const minerals = [
+ *   {
+ *     id: 'copper',
  *     value: 5,
  *   },
- *   iron: {
+ *   {
+ *     id; 'iron',
  *     value: 20,
  *   }
- * }
+ * ]
  * // returns 5 + 5 + 20 = 30
  * valueInventory(player, minerals)
  * 
+ * @param {Player} player
+ * @param {Array.<Mineral>} minerals
  */
-function valueInventory(player, minerals) {
+export function valueInventory(player, minerals) {
   // TODO
 }
