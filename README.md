@@ -62,4 +62,6 @@ Right now, the game's output is pretty ugly, with its minimal tables and lack of
 
 ### Here be dragons
 
-The game's logic and actions are stored in `./src/engine/engine.js`. You won't need to touch or understand this file.
+The game's logic and actions are stored in `./src/engine/engine.js`. You won't need to touch or understand this file! 
+
+We encourage you to have a look _after_ you've finished making your improvements.
