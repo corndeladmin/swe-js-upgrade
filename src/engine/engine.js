@@ -45,7 +45,9 @@ export function createGame(loadPlayer = {}) {
     ;[...Array(stats.mining.cycles)].forEach((_) => {
       const mineral = searchForMineral(availableMinerals)
 
-      if (!mineral) { return }
+      if (!mineral) {
+        return
+      }
 
       if (mineral.hardness > stats.drillHardness) {
         mineralsTooHard.push(mineral.id)
