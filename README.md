@@ -38,6 +38,21 @@ In this game, you play a mining robot. Mine minerals, sell them at the surface, 
 
 Add your own minerals and upgrades to the game!
 
+### Project structure
+
+// TODO
+
 ### Suggestions
 
-Try adding a mineral that appears on the surface, but doesn't have much value.
+#### Add a new mineral
+
+As an example, you could add a mineral that appears on the surface, but doesn't have much value.
+
+#### Add a new upgrade
+
+// TODO
+
+#### Make the cli output prettier
+
+// TODO
+
