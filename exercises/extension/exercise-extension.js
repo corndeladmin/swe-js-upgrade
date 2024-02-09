@@ -16,9 +16,19 @@
  *   id: 'mineral_compression',
  *   prerequisite: ['even_bigger_storage'],
  * }
- * isUpgradeAvailable(player, biggerStorage) // returns false
- * isUpgradeAvailable(player, evenBiggerStorage) // returns true
+ * 
+ * // The player already owns this upgrade
+ * // So it returns false
+ * isUpgradeAvailable(player, biggerStorage)
+ * 
+ * // The player does not have the prerequisite upgrade
+ * // So it returns false
  * isUpgradeAvailable(player, mineralCompression) // returns false
+ * 
+ * // The player does not own the upgrade 
+ * // and has the prerequisite upgrade
+ * // So it returns true
+ * isUpgradeAvailable(player, evenBiggerStorage)
  *
  * @param {Player} player - The player object
  * @param {Upgrade} upgrade - The upgrade object

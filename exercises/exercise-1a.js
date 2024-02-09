@@ -25,8 +25,8 @@
  */
 
 
-// Exercise 1a: Create a mineral object
-// Give its properties the values you want, but make sure to include all the properties
+// Exercise 1a: Complete the rest of the diamond object
+// Add any values you like, but make sure they're the right type!
 
 /**
  * @type {Mineral}

@@ -11,7 +11,6 @@ describe("sortUpgrades", () => {
         description: "Description 1",
         value: 10,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
       {
         id: "2",
@@ -20,7 +19,6 @@ describe("sortUpgrades", () => {
         description: "Description 2",
         value: 20,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
       {
         id: "3",
@@ -29,7 +27,6 @@ describe("sortUpgrades", () => {
         description: "Description 3",
         value: 30,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
     ]
 
@@ -43,7 +40,6 @@ describe("sortUpgrades", () => {
         description: "Description 2",
         value: 20,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
       {
         id: "3",
@@ -52,7 +48,6 @@ describe("sortUpgrades", () => {
         description: "Description 3",
         value: 30,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
       {
         id: "1",
@@ -61,7 +56,6 @@ describe("sortUpgrades", () => {
         description: "Description 1",
         value: 10,
         prerequisites: [],
-        applyUpgrade: () => {},
       },
     ])
   })

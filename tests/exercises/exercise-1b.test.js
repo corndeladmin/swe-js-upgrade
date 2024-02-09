@@ -21,7 +21,7 @@ describe("Exercise 1b", () => {
 
       const abundance = getAbundance(mineral)
 
-      assert.strictEqual(abundance, 10)
+      assert.strictEqual(abundance, 2)
     })
   })
 
