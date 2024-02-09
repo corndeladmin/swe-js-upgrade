@@ -1,4 +1,6 @@
-import { baseStats, minerals, upgrades } from "../config/index.js"
+import { baseStats } from "../config/baseStats.js"
+import { minerals } from "../config/minerals.js"
+import { upgrades } from "../config/upgrades.js"
 
 export function createGame(loadPlayer = {}) {
   const player = {
