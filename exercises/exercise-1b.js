@@ -28,7 +28,6 @@
 /**
  * Gets the abundance of a mineral
  * @example
- * copper.distribution.abundance = 10
  * getAbundance(copper) // returns 10
  * 
  * @param {Mineral} mineral - The mineral id

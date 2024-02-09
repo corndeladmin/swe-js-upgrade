@@ -1,7 +1,7 @@
 /**
  * @typedef Mineral
  * @type {object}
- * @property {string} id - the 
+ * @property {string} id - The id used to uniquely identify the mineral
  * @property {string} name - The name of the mineral
  * @property {number} value - The value of the mineral
  * @property {Object} distribution - The distribution of the mineral

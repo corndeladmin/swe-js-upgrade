@@ -1,26 +1,18 @@
 export function titleActions(rl) {
-  function newGame(gameEngine) {
-    rl.question('Are you sure you want to start a new game?\ny/n: ', (answer) => {
-      if (answer.match(/^y(es)?$/i)) {
-        gameEngine.newGame()
-      } 
-
-      rl.prompt()
-    })
+  function newGame(state) {
+    state.createNewGame()
+    rl.prompt()
   }
 
-  function loadGame(gameEngine) {
-    rl.question('Enter your saved game\nLoad game: ', (answer) => {
-      const gameJson = Buffer.from(answer, 'base64').toString('ascii')
-      try {
-        const gameInfo = JSON.parse(gameJson)
-        gameEngine.loadGame(gameInfo)
-      } catch (error) {
-        console.log('Loading game failed')
-      }
-
-      rl.prompt()
-    })
+async function loadGame(state) {
+    const saveGameString = await rl.question('Enter your saved game\nLoad game: ')
+    const gameJson = Buffer.from(saveGameString, 'base64').toString('ascii')
+    try {
+      const gameInfo = JSON.parse(gameJson)
+      state.loadGame(gameInfo)
+    } catch (error) {
+      console.log('Loading game failed')
+    }
   }
 
   return {

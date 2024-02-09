@@ -1,12 +1,9 @@
 export function quitAction(rl) {
-  function quit() {
-    rl.question('Are you sure you want to quit?\ny/n: ', (answer) => {
-      if (answer.match(/^y(es)?$/i)) {
-        rl.close()
-      } 
-
-      rl.prompt()
-    })
+  async function quit() {
+    const answer = await rl.question('Are you sure you want to quit?\ny/n: ')
+    if (answer.match(/^y(es)?$/i)) {
+      rl.close()
+    } 
   }
 
   return {

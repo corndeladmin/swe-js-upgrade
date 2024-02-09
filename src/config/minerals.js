@@ -1,4 +1,4 @@
-const minerals = [
+export const minerals = [
   {
     id: 'copper',
     displayName: 'copper ore',
@@ -44,5 +44,3 @@ const minerals = [
     hardness: 15,
   }
 ]
-
-export default minerals

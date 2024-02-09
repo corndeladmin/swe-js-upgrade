@@ -1,7 +1,9 @@
-const baseStats = {
+export const baseStats = {
   maxDepth: 50,
-  maxInventory: 12,
-
+  inventorySize: 4,
+  mining: {
+    cycles: 5,
+    strength: 5,
+    chanceToFindMineral: 0.5,
+  }
 }
-
-export default baseStats
