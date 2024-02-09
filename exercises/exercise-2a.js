@@ -21,5 +21,5 @@
  * @returns {Array.<Upgrade>} The sorted upgrades
  */
 export function sortUpgrades(upgrades) {
-  // TODO
+  return upgrades.sort((a, b) => a.sortOrder - b.sortOrder)
 }

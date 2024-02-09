@@ -48,5 +48,5 @@
  * @returns {Array.<string>} The upgrades the player can afford
  */
 export function getAffordableUpgrades(player, upgrades) {
-  // TODO
+  return upgrades.filter(upgrade => upgrade.value <= player.money).map(upgrade => upgrade.id)
 }

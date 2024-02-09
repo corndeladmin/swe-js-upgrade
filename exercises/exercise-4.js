@@ -56,5 +56,7 @@
  * @param {Array.<Mineral>} minerals
  */
 export function valueInventory(player, minerals) {
-  // TODO
+  const inventoryMinerals = player.inventory.map(mineralId => minerals.find(mineral => mineral.id === mineralId))
+  const inventoryMineralValues = inventoryMinerals.map(mineral => mineral.value)
+  return inventoryMineralValues.reduce((acc, value) => acc + value, 0)
 }

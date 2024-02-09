@@ -34,7 +34,7 @@
  * @returns {number} The abundance of the mineral
  */
 export function getAbundance(mineral) {
-  // TODO
+  return mineral.distribution.abundance
 }
 
 
@@ -47,5 +47,5 @@ export function getAbundance(mineral) {
  * @param {Mineral} mineral - The mineral id
  */
 export function setAbundance(mineral, value) {
-  // TODO
+  mineral.distribution.abundance = value
 }

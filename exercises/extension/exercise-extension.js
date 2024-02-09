@@ -35,7 +35,10 @@
  * @returns {boolean} Whether the upgrade is available
  */
 export function isUpgradeAvailable(player, upgrade) {
-  // TODO
+  const isUpgradeOwned = player.upgrades.includes(upgrade.id)
+  const hasPrerequisite = upgrade?.prerequisite.every(prerequisite => player.upgrades.includes(prerequisite))
+
+  return !isUpgradeOwned && hasPrerequisite
 }
 
 /**
@@ -62,5 +65,5 @@ export function isUpgradeAvailable(player, upgrade) {
  * @returns {Array.<Upgrade>} The available upgrades
  */
 export function getAvailableUpgrades(player, upgrades) {
-  // TODO
+  return upgrades.filter(upgrade => isUpgradeAvailable(player, upgrade))
 }

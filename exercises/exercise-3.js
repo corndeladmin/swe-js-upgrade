@@ -40,5 +40,5 @@
  * @returns {boolean} Whether the upgrade is available
  */
 export function isUpgradeOwned(player, upgrade) {
-  // TODO
+  return player.upgrades.includes(upgrade.id)
 }

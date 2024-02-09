@@ -33,5 +33,12 @@
  */
 export const diamond = {
   id: 'diamond',
-  // TODO: Add the rest of the properties
+  name: 'diamond',
+  value: 100,
+  distribution: {
+    minDepth: 100,
+    maxDepth: 200,
+    abundance: 5,
+  },
+  hardness: 20,
 }
