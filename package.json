@@ -5,7 +5,15 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node ./src/app.js",
+    "test": "mocha ./tests/exercises",
+    "test:1a": "mocha ./tests/exercises/exercise-1a.test.js",
+    "test:1b": "mocha ./tests/exercises/exercise-1b.test.js",
+    "test:2a": "mocha ./tests/exercises/exercise-2a.test.js",
+    "test:2b": "mocha ./tests/exercises/exercise-2b.test.js",
+    "test:3": "mocha ./tests/exercises/exercise-3.test.js",
+    "test:4": "mocha ./tests/exercises/exercise-4.test.js",
+    "test:extension": "mocha ./tests/exercises/extension/exercise-extension.test.js"
   },
   "author": "",
   "license": "ISC",

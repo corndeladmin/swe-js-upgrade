@@ -33,3 +33,11 @@ In this game, you play a mining robot. Mine minerals, sell them at the surface, 
 
 1. Read the docs on [reduce]().
 2. Complete Exercise 4.
+
+## Workshop and hackathon
+
+Add your own minerals and upgrades to the game!
+
+### Suggestions
+
+Try adding a mineral that appears on the surface, but doesn't have much value.
