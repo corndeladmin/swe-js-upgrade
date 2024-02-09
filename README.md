@@ -17,29 +17,29 @@ In this game, you play a mining robot. Mine minerals, sell them at the surface, 
 
 1. Read the docs on [objects as key value stores]().
 2. Complete Exercise 1a.
-  - Test using `npm run test:1a`
+    - Test using `npm run test:1a`
 3. Complete Exercise 1b.
-  - Test using `npm run test:1b`
+    - Test using `npm run test:1b`
 
 ### Lists of objects
 
 1. Read the docs on [lists of objects]().
 2. Complete Exercise 2a.
-  - Test using `npm run test:2a`
+    - Test using `npm run test:2a`
 3. Complete Exercise 2b.
-  - Test using `npm run test:2b`
+    - Test using `npm run test:2b`
 
 ### Object nesting
 
 1. Read the docs on [object nesting]().
 2. Complete Exercise 3.
-  - Test using `npm run test:3`
+    - Test using `npm run test:3`
 
 ### Reduce
 
 1. Read the docs on [reduce]().
 2. Complete Exercise 4.
-  - Test using `npm run test:4`
+    - Test using `npm run test:4`
 
 ### Optional Extension
 
