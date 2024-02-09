@@ -36,23 +36,30 @@ In this game, you play a mining robot. Mine minerals, sell them at the surface, 
 
 ## Workshop and hackathon
 
-Add your own minerals and upgrades to the game!
+You've been tasked to make the game more fun to play by adding your own minerals and upgrades to the game, and by improving the console output.
 
-### Project structure
-
-// TODO
-
-### Suggestions
+### Suggestions for improvements
 
 #### Add a new mineral
 
+Data about minerals are stored in `./src/config/minerals.js`. 
+
 As an example, you could add a mineral that appears on the surface, but doesn't have much value.
+
+Or maybe you can add a mineral that's deep underground and hard to mine, but is worth a lot of money. You'll need to add a new upgrade to the game to mine it, though!
 
 #### Add a new upgrade
 
-// TODO
+Data about upgrades are stored in `./src/config/upgrades.js`.
+
+An upgrade could increase your mining strength so you can mine harder minerals, it could let you go deeper so you can find rarer and more valuable minerals, or it could let you carry more minerals back to the surface.
 
 #### Make the cli output prettier
 
-// TODO
+The console output for the various commands is stored in `./src/cli/game.js`.
 
+Right now, the game's output is pretty ugly, with its minimal tables and lack of flavour text. You could make it much more readable and fun to play!
+
+### Here be dragons
+
+The game's logic and actions are stored in `./src/engine/engine.js`. You won't need to touch or understand this file.

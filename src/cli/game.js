@@ -18,34 +18,45 @@ export function gameActions(rl) {
   }
 
   function checkInventory(state) {
-    console.table(state.getGame().player.inventory)
+    const inventory = state.getGame().player.inventory
+
+    console.table(inventory)
   }
 
   function listAvailableUpgrades(state) {
-    console.table(state.getGame().getAvailableUpgrades())
+    const availableUpgrades = state.getGame().getAvailableUpgrades()
+
+    console.table(availableUpgrades)
   }
 
   function listOwnedUpgrades(state) {
-    console.table(state.getGame().player.upgrades)
+    const ownedUpgrades = state.getGame().player.upgrades
+
+    console.table(ownedUpgrades)
   }
 
   function saveGame(state) {
     const gameJson = Buffer.from(
       JSON.stringify(state.getGame().player),
     ).toString("base64")
+
     console.log("Save this string to load your game later:")
     console.log(gameJson)
   }
 
   function sellMinerals(state) {
-    console.table(state.getGame().sellInventory())
+    const sellDetails = state.getGame().sellInventory()
+
+    console.table(sellDetails)
   }
 
   async function buyUpgrades(state) {
     const answer = await rl.question(
       "Enter the id of the upgrade you want to buy: ",
     )
-    console.log(state.getGame().buyUpgrade(answer))
+    const upgradeBought = state.getGame().buyUpgrade(answer)
+
+    console.log(JSON.stringify(upgradeBought) || "Unknown upgrade id")
   }
 
   return {
