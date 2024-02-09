@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "run": "node ./src/app.js",
+    "start": "node ./src/app.js",
     "test": "mocha ./tests/exercises",
     "test:1a": "mocha ./tests/exercises/exercise-1a.test.js",
     "test:1b": "mocha ./tests/exercises/exercise-1b.test.js",
